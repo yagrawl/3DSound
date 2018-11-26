@@ -136,11 +136,6 @@ stop.onclick = function() {
 // controls to move left and right past the boom box
 // and zoom in and out
 
-var leftButton = document.querySelector('.left');
-var rightButton = document.querySelector('.right');
-var zoomInButton = document.querySelector('.zoom-in');
-var zoomOutButton = document.querySelector('.zoom-out');
-
 var boomX = 0;
 var boomY = 0;
 var boomZoom = 0.50;
@@ -212,22 +207,27 @@ function zoomOut() {
 // In each of the cases below, onmousedown runs the functions above
 // onmouseup cancels the resulting requestAnimationFrames.
 
-leftButton.onmousedown = moveLeft;
-leftButton.onmouseup = function () {
-  window.cancelAnimationFrame(leftLoop);
-};
+function getKeyAndMove(e) {
+  var key_code = e.which || e.keyCode;
+  switch(key_code) {
+  	case 37: //left arrow key
+      moveRight();
+      window.cancelAnimationFrame(rightLoop);
+      break;
 
-rightButton.onmousedown = moveRight;
-rightButton.onmouseup = function () {
-  window.cancelAnimationFrame(rightLoop);
-};
+  	case 38: //Up arrow key
+  		zoomOut();
+      window.cancelAnimationFrame(zoomOutLoop);
+  		break;
 
-zoomInButton.onmousedown = zoomIn;
-zoomInButton.onmouseup = function () {
-  window.cancelAnimationFrame(zoomInLoop);
-};
+  	case 39: //right arrow key
+      moveLeft();
+      window.cancelAnimationFrame(leftLoop);
+      break;
 
-zoomOutButton.onmousedown = zoomOut;
-zoomOutButton.onmouseup = function () {
-  window.cancelAnimationFrame(zoomOutLoop);
-};
+  	case 40: //down arrow key
+  		zoomIn();
+      window.cancelAnimationFrame(zoomInLoop);
+  		break;
+  }
+}

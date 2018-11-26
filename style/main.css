@@ -27,7 +27,7 @@ button {
     text-align: center;
     color: white;
     border: none;
-    width: 120px;
+    width: 80px;
     font-size: 1.5rem;
     line-height: 1.5rem;
     padding: .5rem;
@@ -44,13 +44,13 @@ button:active {
 }
 
 .play {
-  top: 2px;
-  left: 2px;
+  top: 10px;
+  left: 10px;
 }
 
 .stop {
-  top: 2px;
-  left: 124px;
+  top: 10px;
+  left: 100px;
 }
 
 .left {
@@ -87,9 +87,9 @@ button:active {
 /* setting up the room of metal */
 
 .room {
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	height: 300px;
+	border-top: 1px solid #9DA5B4;
+	border-bottom: 1px solid #9DA5B4;
+	height: 400px;
 	width: 100%;
 	position: relative;
 }
