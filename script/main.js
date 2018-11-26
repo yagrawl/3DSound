@@ -4,6 +4,7 @@ var HEIGHT = window.innerHeight;
 var xPos = Math.floor(WIDTH/2);
 var yPos = Math.floor(HEIGHT/2);
 var zPos = 295;
+var sweep_source = false;
 
 // define other variables
 
@@ -45,6 +46,7 @@ var source;
 
 var play = document.querySelector('.play');
 var stop = document.querySelector('.stop');
+var sweep = document.querySelector('.sweep');
 
 var boomBox = document.querySelector('.boom-box');
 
@@ -133,6 +135,14 @@ stop.onclick = function() {
   pulseWrapper.classList.remove('pulsate');
 };
 
+sweep.onclick = function() {
+  if(sweep_source) {
+    sweep_source = false;
+  } else {
+    sweep_source = true;
+  }
+}
+
 // controls to move left and right past the boom box
 // and zoom in and out
 
@@ -212,22 +222,30 @@ function getKeyAndMove(e) {
   switch(key_code) {
   	case 37: //left arrow key
       moveRight();
-      window.cancelAnimationFrame(rightLoop);
+      if(sweep_source) {
+        window.cancelAnimationFrame(rightLoop);
+      }
       break;
 
   	case 38: //Up arrow key
   		zoomOut();
-      window.cancelAnimationFrame(zoomOutLoop);
+      if(sweep_source) {
+        window.cancelAnimationFrame(zoomOutLoop);
+      }
   		break;
 
   	case 39: //right arrow key
       moveLeft();
-      window.cancelAnimationFrame(leftLoop);
+      if(sweep_source) {
+        window.cancelAnimationFrame(leftLoop);
+      }
       break;
 
   	case 40: //down arrow key
   		zoomIn();
-      window.cancelAnimationFrame(zoomInLoop);
+      if(sweep_source) {
+        window.cancelAnimationFrame(zoomInLoop);
+      }
   		break;
   }
 }

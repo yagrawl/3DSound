@@ -58,6 +58,11 @@ button:active {
   left: 70px;
 }
 
+.sweep {
+	top: 10px;
+	left: 130px;
+}
+
 .left {
   top: 44px;
   right: 64px;
