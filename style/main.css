@@ -10,9 +10,11 @@ body {
 
 h1 {
 	font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 	text-align: center;
 	font-size: 8rem;
 	margin: 4rem 0 0 0;
+  color: #292D34;
 }
 
 p {
@@ -28,6 +30,9 @@ button {
     color: white;
     border: none;
     width: 80px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
     font-size: 1.5rem;
     line-height: 1.5rem;
     padding: .5rem;
@@ -89,6 +94,7 @@ button:active {
 .room {
 	border-top: 1px solid #9DA5B4;
 	border-bottom: 1px solid #9DA5B4;
+  background-color: #292D34;
 	height: 400px;
 	width: 100%;
 	position: relative;
@@ -137,9 +143,18 @@ button:active {
 	to { transform: scaleY(1.07);}
 }
 
+.instruction {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  color: #292D34;
+}
+
 /* position data outputs */
 
 .listener-data, .panner-data {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
   width: 230px;
   position: absolute;
   right: 2px;
