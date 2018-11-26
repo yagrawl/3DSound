@@ -29,7 +29,7 @@ button {
     text-align: center;
     color: white;
     border: none;
-    width: 80px;
+    width: 50px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
     font-size: 16px;
@@ -55,7 +55,7 @@ button:active {
 
 .stop {
   top: 10px;
-  left: 100px;
+  left: 70px;
 }
 
 .left {
@@ -143,11 +143,23 @@ button:active {
 	to { transform: scaleY(1.07);}
 }
 
+.directions-div {
+	background-color: #C96165;
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: center;
+	border-radius: 20px;
+}
+
 .instruction {
   font-family: 'Montserrat', sans-serif;
   font-weight: 100;
   font-size: 16px;
-  color: #292D34;
+  color: white;
+	margin-top: 12px;
+	margin-bottom: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 /* position data outputs */

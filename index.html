@@ -8,6 +8,7 @@
     <title>3DSound</title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="style/main.css">
 
   </head>
@@ -15,8 +16,8 @@
   <body onkeydown='getKeyAndMove(event)'>
     <h1>3D Sound</h1>
 
-    <button class="play">Play</button>
-    <button class="stop">Stop</button>
+    <button class="play"><i class="fas fa-play-circle"></i></button>
+    <button class="stop"><i class="fas fa-pause-circle"></i></button>
 
     <p class="listener-data">Listener data:</p>
     <p class="panner-data">Panner data:</p>
@@ -29,7 +30,9 @@
         </div>
       </div>
     </section>
-    <p class="instruction">Use Arrow Keys to Move the vantage point. Control sound from the Play/Stop button on top.</p>
+    <div class="directions-div">
+      <p class="instruction">Use Arrow Keys to move the vantage point. Control sound from the Play/Stop button on top.</p>
+    </div>
   </body>
 <script src="script/main.js"></script>
 </html>
