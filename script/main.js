@@ -4,6 +4,7 @@ var HEIGHT = window.innerHeight;
 var xPos = Math.floor(WIDTH/2);
 var yPos = Math.floor(HEIGHT/2);
 var zPos = 295;
+
 var sweep_source = false;
 
 // define other variables
