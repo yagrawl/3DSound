@@ -6,7 +6,6 @@ var yPos = Math.floor(HEIGHT/2);
 var zPos = 295;
 
 var sweep_source = false;
-var back_flip = false;
 
 // define other variables
 
@@ -49,12 +48,12 @@ var source;
 var play = document.querySelector('.play');
 var stop = document.querySelector('.stop');
 var sweep = document.querySelector('.sweep');
-var back = document.querySelector('.back');
 
 var boomBox = document.querySelector('.boom-box');
 
 var listenerData = document.querySelector('.listener-data');
 var pannerData = document.querySelector('.panner-data');
+var room = document.querySelector('.room');
 
 leftBound = (-xPos) + 50;
 rightBound = xPos - 50;
@@ -146,20 +145,6 @@ sweep.onclick = function() {
   }
 }
 
-back.onclick = function() {
-  var room = document.querySelector('.room');
-
-  if(back_flip === false) {
-    room.style.backgroundColor = '#56859A';
-    back_flip = true;
-    zPos = 305;
-  } else {
-    room.style.backgroundColor = '#292D34';
-    back_flip = false;
-    zPos = 295;
-  }
-}
-
 // controls to move left and right past the boom box
 // and zoom in and out
 
@@ -200,22 +185,18 @@ function moveLeft() {
 }
 
 function zoomIn() {
-  if(back_flip) {
-    boomZoom += -0.05;
-    zPos += -0.066;
+  boomZoom += 0.05;
+  zPos += 0.166;
+
+  if(zPos > 300) {
+    room.style.backgroundColor = '#56859A';
   } else {
-    boomZoom += 0.05;
-    zPos += 0.066;
+    room.style.backgroundColor = '#292D34';
   }
 
   if(boomZoom > 4) {
     boomZoom = 4;
-
-    if(back_flip) {
-      zPos = 300.1;
-    } else {
-      zPos = 299.9;
-    }
+    zPos = 305;
   }
 
   positionPanner();
@@ -226,22 +207,18 @@ function zoomIn() {
 }
 
 function zoomOut() {
-  if(back_flip) {
-    boomZoom += 0.05;
-    zPos += 0.066;
+  boomZoom += -0.05;
+  zPos += -0.066;
+
+  if(zPos > 300) {
+    room.style.backgroundColor = '#56859A';
   } else {
-    boomZoom += -0.05;
-    zPos += -0.066;
+    room.style.backgroundColor = '#292D34';
   }
 
   if(boomZoom <= 0.5) {
     boomZoom = 0.5;
-
-    if(back_flip) {
-      zPos = 305;
-    } else {
-      zPos = 295;
-    }
+    zPos = 295;
   }
 
   positionPanner();
@@ -266,9 +243,7 @@ function getKeyAndMove(e) {
 
   	case 38: //Up arrow key
   		zoomOut();
-      if(sweep_source) {
-        window.cancelAnimationFrame(zoomOutLoop);
-      }
+      window.cancelAnimationFrame(zoomOutLoop);
   		break;
 
   	case 39: //right arrow key
@@ -280,9 +255,7 @@ function getKeyAndMove(e) {
 
   	case 40: //down arrow key
   		zoomIn();
-      if(sweep_source) {
-        window.cancelAnimationFrame(zoomInLoop);
-      }
+      window.cancelAnimationFrame(zoomInLoop);
   		break;
   }
 }
