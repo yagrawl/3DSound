@@ -6,6 +6,7 @@ var yPos = Math.floor(HEIGHT/2);
 var zPos = 295;
 
 var sweep_source = false;
+var back_flip = false;
 
 // define other variables
 
@@ -145,6 +146,19 @@ sweep.onclick = function() {
   }
 }
 
+back.onclick = function() {
+  var room = document.querySelector('.room');
+  if(back_flip === false) {
+    room.style.backgroundColor = '#56859A';
+    back_flip = true;
+    zPos = 305;
+  } else {
+    room.style.backgroundColor = '#292D34';
+    back_flip = false;
+    zPos = 295;
+  }
+}
+
 // controls to move left and right past the boom box
 // and zoom in and out
 
@@ -190,7 +204,12 @@ function zoomIn() {
 
   if(boomZoom > 4) {
     boomZoom = 4;
-    zPos = 299.9;
+
+    if(back_flip) {
+      zPos = 300.1;
+    } else {
+      zPos = 299.9;
+    }
   }
 
   positionPanner();
@@ -206,7 +225,12 @@ function zoomOut() {
 
   if(boomZoom <= 0.5) {
     boomZoom = 0.5;
-    zPos = 295;
+
+    if(back_flip) {
+      zPos = 305;
+    } else {
+      zPos = 295;
+    }
   }
 
   positionPanner();
