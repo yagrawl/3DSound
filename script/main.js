@@ -145,6 +145,17 @@ sweep.onclick = function() {
   }
 }
 
+function showBackSnackbar() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
 // controls to move left and right past the boom box
 // and zoom in and out
 
@@ -188,6 +199,10 @@ function zoomIn() {
   boomZoom += 0.05;
   zPos += 0.166;
 
+  if(zPos > 300 && zPos < 300.166) {
+    showBackSnackbar();
+  }
+
   if(zPos > 300) {
     room.style.backgroundColor = '#56859A';
   } else {
@@ -208,7 +223,7 @@ function zoomIn() {
 
 function zoomOut() {
   boomZoom += -0.05;
-  zPos += -0.066;
+  zPos += -0.166;
 
   if(zPos > 300) {
     room.style.backgroundColor = '#56859A';
