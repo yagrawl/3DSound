@@ -48,6 +48,7 @@ var source;
 var play = document.querySelector('.play');
 var stop = document.querySelector('.stop');
 var sweep = document.querySelector('.sweep');
+var back = document.querySelector('.back');
 
 var boomBox = document.querySelector('.boom-box');
 

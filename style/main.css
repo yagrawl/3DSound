@@ -25,7 +25,7 @@ p {
 /* button styling and positioning */
 
 button {
-    background-color: #292D34;
+    background-color: #C96165;
     text-align: center;
     color: white;
     border: none;
@@ -38,6 +38,7 @@ button {
     padding: .5rem;
     border-radius: 20px;
     position: absolute;
+		box-shadow: 0 15px 15px rgba(0,0,0,0.3);
 }
 
 button:hover, button:focus {
@@ -46,6 +47,11 @@ button:hover, button:focus {
 
 button:active {
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.7);
+}
+
+.button-panel {
+	position: absolute;
+	z-index: 1;
 }
 
 .play {
@@ -63,29 +69,9 @@ button:active {
 	left: 130px;
 }
 
-.left {
-  top: 44px;
-  right: 64px;
-  background: url(../icons/left.svg) no-repeat center, linear-gradient(to bottom,  #0088cc 0%,#0055cc 100%);
-
-}
-
-.right {
-  top: 44px;
-  right: 2px;
-  background: url(../icons/right.svg) no-repeat center, linear-gradient(to bottom,  #0088cc 0%,#0055cc 100%);
-}
-
-.zoom-in {
-  top: 2px;
-  right: 31px;
-  background: url(../icons/zoom-in.svg) no-repeat center, linear-gradient(to bottom,  #0088cc 0%,#0055cc 100%);
-}
-
-.zoom-out {
-  top: 86px;
-  right: 31px;
-  background: url(../icons/zoom-out.svg) no-repeat center, linear-gradient(to bottom,  #0088cc 0%,#0055cc 100%);
+.back {
+	top: 10px;
+	left: 190px;
 }
 
 .move {
@@ -95,14 +81,18 @@ button:active {
 }
 
 /* setting up the room of metal */
-
 .room {
-	border-top: 1px solid #9DA5B4;
-	border-bottom: 1px solid #9DA5B4;
-  background-color: #292D34;
-	height: 400px;
-	width: 100%;
-	position: relative;
+    position: relative;
+    display: table;
+    width: 100vw;
+    min-width: 600px;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+		background-color: #292D34;
+    margin: auto;
 }
 
 .flex-wrapper {
@@ -148,23 +138,22 @@ button:active {
 	to { transform: scaleY(1.07);}
 }
 
-.directions-div {
-	background-color: #C96165;
-	margin-left: 20%;
-	margin-right: 20%;
-	text-align: center;
-	border-radius: 20px;
-}
-
 .instruction {
   font-family: 'Montserrat', sans-serif;
   font-weight: 100;
   font-size: 16px;
+	background-color: #C96165;
   color: white;
-	margin-top: 12px;
-	margin-bottom: 2px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	position: absolute;
+	bottom: 5%;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 15px;
+	margin-left: 20%;
+	margin-right: 20%;
+	box-shadow: 0 15px 15px rgba(0,0,0,0.3);
 }
 
 /* position data outputs */
@@ -174,6 +163,8 @@ button:active {
   font-weight: 100;
   width: 230px;
   position: absolute;
+	z-index: 1;
+	color: white;
   right: 2px;
 }
 

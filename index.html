@@ -16,11 +16,12 @@
   </head>
 
   <body onkeydown='getKeyAndMove(event)'>
-    <h1>3D Sound</h1>
-
-    <button class="play"><i class="fas fa-play-circle"></i></button>
-    <button class="stop"><i class="fas fa-pause-circle"></i></button>
-    <button class="sweep"><i class="fas fa-arrows-alt"></i></button>
+    <div class="button-panel">
+      <button class="play"><i class="fas fa-play-circle"></i></button>
+      <button class="stop"><i class="fas fa-pause-circle"></i></button>
+      <button class="sweep"><i class="fas fa-arrows-alt"></i></button>
+      <button class="back"><i class="fas fa-undo-alt"></i></button>
+    </div>
 
     <p class="listener-data">Listener data:</p>
     <p class="panner-data">Panner data:</p>
@@ -33,9 +34,7 @@
         </div>
       </div>
     </section>
-    <div class="directions-div">
       <p class="instruction">Use Arrow Keys to move the vantage point. Control sound from the Play/Stop button on top.</p>
-    </div>
   </body>
 <script src="script/main.js"></script>
 </html>
