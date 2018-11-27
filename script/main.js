@@ -148,6 +148,7 @@ sweep.onclick = function() {
 
 back.onclick = function() {
   var room = document.querySelector('.room');
+
   if(back_flip === false) {
     room.style.backgroundColor = '#56859A';
     back_flip = true;
@@ -199,8 +200,13 @@ function moveLeft() {
 }
 
 function zoomIn() {
-  boomZoom += 0.05;
-  zPos += 0.066;
+  if(back_flip) {
+    boomZoom += -0.05;
+    zPos += -0.066;
+  } else {
+    boomZoom += 0.05;
+    zPos += 0.066;
+  }
 
   if(boomZoom > 4) {
     boomZoom = 4;
@@ -220,8 +226,13 @@ function zoomIn() {
 }
 
 function zoomOut() {
-  boomZoom += -0.05;
-  zPos += -0.066;
+  if(back_flip) {
+    boomZoom += 0.05;
+    zPos += 0.066;
+  } else {
+    boomZoom += -0.05;
+    zPos += -0.066;
+  }
 
   if(boomZoom <= 0.5) {
     boomZoom = 0.5;
