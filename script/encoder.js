@@ -128,6 +128,10 @@ let cleanBits = (bin) => {
   } else {
     bin = 1;
   }
+
+  if(POS = 'back') {
+    audioCtx.reverb();
+  }
 }
 
 let getbin = audio => {
