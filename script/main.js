@@ -93,7 +93,7 @@ function getData() {
   source = audioCtx.createBufferSource();
   request = new XMLHttpRequest();
 
-  request.open('GET', 'beethoven.ogg', true);
+  request.open('GET', 'float-on.ogg', true);
 
   request.responseType = 'arraybuffer';
 
