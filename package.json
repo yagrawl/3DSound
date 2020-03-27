@@ -1,0 +1,27 @@
+{
+  "name": "3dsound",
+  "version": "1.0.0",
+  "description": "surround sound in two channels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yagrawl/3DSound.git"
+  },
+  "author": "Yash Agrawal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yagrawl/3DSound/issues"
+  },
+  "homepage": "https://github.com/yagrawl/3DSound#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  }
+}
